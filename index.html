@@ -35,11 +35,11 @@
   }
   .subtitle { color: var(--muted); font-size: 12px; letter-spacing: 2px; margin-bottom: 12px; }
 
-  #wrap { position: relative; }
+  #wrap { position: relative; width: 100%; max-width: 520px; }
 
   .hud {
     display: flex; justify-content: space-between; align-items: center;
-    width: 520px; max-width: 94vw;
+    width: 100%; max-width: 520px;
     margin-bottom: 8px; gap: 8px;
     font-size: 13px;
   }
@@ -52,6 +52,9 @@
 
   #game {
     display: block;
+    width: 100%;
+    max-width: 520px;
+    height: auto;
     background: #05070b;
     border: 3px solid var(--border);
     border-radius: 10px;
@@ -106,6 +109,15 @@
     #btn-fire { grid-column: 2; grid-row: 2; background:#3a2f1a; font-size:16px; }
     #btn-right { grid-column: 3; grid-row: 2; }
     #btn-down { grid-column: 2; grid-row: 3; }
+  }
+
+  @media (max-width: 600px) {
+    body { height: auto; min-height: 100vh; overflow-y: auto; justify-content: flex-start; padding: 12px 0; }
+    .title { font-size: 20px; letter-spacing: 2px; margin-bottom: 4px; }
+    .subtitle { font-size: 10px; margin-bottom: 8px; }
+    .controls { display: none; }
+    .hud { margin-bottom: 6px; gap: 4px; font-size: 12px; }
+    #pad { grid-template-columns: 56px 56px 56px; grid-template-rows: 56px 56px 56px; margin-top: 10px; }
   }
 </style>
 </head>
