@@ -279,6 +279,7 @@ const PLAYER_SPAWN = { col: 3, row: 12 };
 function cellPx(c, r) { return { x: c * TILE + OFF, y: r * TILE + OFF }; }
 function tileAt(c, r) {
   if (c < 0 || r < 0 || c >= COLS || r >= ROWS) return T.STEEL;
+  if (!map[r]) return T.EMPTY;  // 地图尚未加载时安全返回空地块
   return map[r][c];
 }
 function isSolidMove(t) { return t !== T.EMPTY && t !== T.TREE; }
